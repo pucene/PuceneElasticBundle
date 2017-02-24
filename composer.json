@@ -1,0 +1,41 @@
+{
+    "name": "pucene/elastic-bundle",
+    "description": "Integrates elasticsearch in symfony with pucene interface.",
+    "authors": [
+        {
+            "name": "Pucene Community",
+            "homepage": "https://github.com/pucene/PuceneElasticBundle/contributors"
+        }
+    ],
+    "keywords": [
+        "symfony",
+        "bundle",
+        "elasticsearch",
+        "lucene",
+        "indexing"
+    ],
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "require": {
+        "symfony/http-kernel": "^2.8 || ^3.0",
+        "symfony/dependency-injection": "^2.8 || ^3.0",
+        "symfony/config": "^2.8 || ^3.0",
+        "symfony/console": "^2.8 || ^3.0",
+        "doctrine/orm": "^2.5",
+        "pucene/core": "dev-master"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Pucene\\Bundle\\ElasticBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Pucene\\Bundle\\ElasticBundle\\Tests\\": "tests/"
+        }
+    }
+}
+
