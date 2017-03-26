@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="pucene_elastic.search_builder" class="Pucene\Bundle\ElasticBundle\QueryBuilder\SearchBuilder">
+            <argument type="service" id="pucene_elastic.query_builder.pool"/>
+        </service>
+
+        <service id="pucene_elastic.client" class="Elasticsearch\Client">
+            <factory class="Pucene\Bundle\ElasticBundle\Elasticsearch\ClientFactory" method="create"/>
+        </service>
+
+        <service id="pucene_elastic.indices.test" class="Pucene\Bundle\ElasticBundle\Index\Index">
+            <argument type="service" id="pucene_elastic.search_builder"/>
+            <argument type="service" id="pucene_elastic.client"/>
+            <argument type="string">pucene</argument>
+        </service>
+    </services>
+</container>
